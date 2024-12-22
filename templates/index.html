@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% extends "nav.html" %}
+
+    {% block title %}Recommendations - Music Recommender{% endblock %}
+
+    {% block content %}
+    
+     <!-- Dropdown for selecting a song -->
+     <label for="songDropdown">Choose a song:</label>
+     <select id="songDropdown" onchange="updateSelectedSong()">
+         <option value="" disabled selected>Select a song</option>
+         {% for song in songs %}
+             <option value="{{ loop.index0 }}" data-track-id="{{ song['Track ID']}}">{{ song['Track Name'] }} - {{ song['Artists'] }}</option>
+         {% endfor %}
+     </select>
+ 
+     <!-- Selected Song Display -->
+     <div id="selectedSong">
+         <h2>Selected Song:</h2>
+         <iframe id="selectedSongPlayer" 
+                 width="300" 
+                 height="80" 
+                 frameborder="0" 
+                 allowtransparency="true" 
+                 allow="encrypted-media">
+         </iframe>
+     </div>
+
+    <h2>Recommendations</h2>
+    <div id="recommendations">
+        <!-- Recommendations will appear here -->
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    {% endblock %}
+</body>
+</html>

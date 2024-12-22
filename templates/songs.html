@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='songs.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "nav.html" %}
+
+    {% block title %}Recommendations - Music Recommender{% endblock %}
+
+    {% block content %}
+    <div class="song-list">
+        {% for song in songs %}
+        <div class="song-item">
+            <h3>{{ song['Track Name'] }} - {{ song['Artists'] }}</h3>
+            <iframe 
+                src="https://open.spotify.com/embed/track/{{ song['Track ID'] }}" 
+                width="300" 
+                height="80" 
+                frameborder="0" 
+                allowtransparency="true" 
+                allow="encrypted-media">
+            </iframe>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
+</body>
+</html>

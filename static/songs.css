@@ -1,0 +1,33 @@
+/* Scrollable Song List */
+.song-list {
+    max-height: 400px; /* Set the maximum height for the container */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border for visual clarity */
+    padding: 10px;      /* Add some padding inside the container */
+    background-color: #f9f9f9; /* Optional: Light background color for contrast */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
+/* Individual Song Items */
+.song-item {
+    margin-bottom: 20px; /* Add spacing between songs */
+    padding: 10px;       /* Add padding inside each song item */
+    background-color: #fff; /* White background for each song */
+    border: 1px solid #ddd; /* Optional: Light border */
+    border-radius: 8px;     /* Optional: Rounded corners for each song */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow effect */
+}
+
+/* Scrollbar Styling */
+.song-list::-webkit-scrollbar {
+    width: 8px; /* Set the scrollbar width */
+}
+
+.song-list::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded edges for the scrollbar thumb */
+}
+
+.song-list::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color on hover */
+}
