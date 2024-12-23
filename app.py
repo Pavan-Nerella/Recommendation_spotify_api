@@ -9,13 +9,19 @@ from sklearn.preprocessing import MinMaxScaler
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from flask_cors import CORS
+from dotenv import load_dotenv, dotenv_values
+import os
+
+# Load environment variables from the .env file
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
 # Spotify API credentials
-CLIENT_ID = '8a63341f5234405e9403d79f5f869cc9'
-CLIENT_SECRET = '55530432bf1a4833a1b6e81d3e254905'
+
+CLIENT_ID = '52b7189ddc004efcbb47d974ec6c4ca2'
+CLIENT_SECRET = '9ed6fbc80eec4ec687afeceb1062eb85'
 
 # Function to obtain Spotify access token
 def get_spotify_token(client_id, client_secret):
