@@ -20,8 +20,8 @@ CORS(app)
 
 # Spotify API credentials
 
-CLIENT_ID = '52b7189ddc004efcbb47d974ec6c4ca2'
-CLIENT_SECRET = '9ed6fbc80eec4ec687afeceb1062eb85'
+CLIENT_ID = os.getenv('CLIENT_ID')
+CLIENT_SECRET = os.getenv('CLIENT_SECRET')
 
 # Function to obtain Spotify access token
 def get_spotify_token(client_id, client_secret):
